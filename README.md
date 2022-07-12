@@ -1,5 +1,5 @@
 ## Audio-Visual Segmentation
-[[Project Page]]()  [[Arxiv]](https://arxiv.org/abs/2207.05042)
+[[Project Page]](https://opennlplab.github.io/AVS_web/#id=hhdory&p=avsbench)  [[Arxiv]](https://arxiv.org/abs/2207.05042)
 
 This repository provides the PyTorch implementation for the ECCV2022 paper "Audio-Visual Segmentation".
 This paper proposes the audio-visual segmentation problem and the AVSBench dataset accordingly.
