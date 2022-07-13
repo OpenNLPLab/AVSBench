@@ -16,7 +16,7 @@ This paper proposes the audio-visual segmentation problem and the AVSBench datas
 The csv file that contains the video ids for downloading the raw YouTube videos and the annoated ground truth segmentation maps can be downloaded from [here](https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing). 
 
 There are two ways to obtain the video data:
-1. Please send an email to zhoujxhfut@gmail.com for the processed videos, with your name and institution.
+1. Please send an email to zhoujxhfut@gmail.com for the processed videos and audios, with your name and institution.
 2. We also provide some scripts to process the raw video data and extract the frames/mel-spectrogram features.
 ```
 cd preprocess_scripts
