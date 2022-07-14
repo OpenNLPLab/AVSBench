@@ -1,0 +1,1170 @@
+---
+title: "AVSBench"
+layout: default
+---
+
+<!-- <div style="position: fixed; bottom: 15px; right:1px;">
+  <a href=""> <img src="{{ site.baseurl }}/static/img/logo/cn.png" width="50%"; /> </a>
+</div> -->
+
+<!-- About -->
+<section class="bg-light" id="about">
+  <div class="container">
+    
+<!--     <div class="row">
+      <div class="col-lg-12">
+        <video autoplay muted loop width="100%"> -->
+          <!-- <source src="{{ site.baseurl }}/static/videos/03x03_videoWall.webm" type="video/webm"> -->
+<!--             <source src="{{ site.baseurl }}/static/videos/st_avqa.mp4" type="video/mp4">
+              <source src="{{ site.baseurl }}/static/videos/st_avqa.mp4" type="video/mp4">
+                Sorry, we cannot display the MUSIC-AVQA video wall as
+                your browser doesn't support HTML5 video.
+        </video>
+      </div>
+    </div>
+ -->
+
+
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading text-uppercase" style="text-align:center;">Audio-Visual Segmentation</h3>
+        <h3 class="section-heading text-uppercase" style="text-align:center; color:#20c997">[ECCV 2022]</h3>
+        <h5 class="text-muted" style="text-align:center;">
+          <ul>
+              <sup>*</sup>Jinxing Zhou<sup>1,2</sup>, 
+              <sup>*</sup>Jianyuan Wang<sup>3</sup>, 
+              Jiayi Zhang<sup>2,4</sup>, 
+              Weixuan Sun<sup>2,3</sup>, <br>
+              Jing Zhang<sup>3</sup>, 
+              Stan Birchfield<sup>5</sup>
+              Dan Guo<sup>1</sup>, 
+              Lingpeng Kong<sup>6,7</sup>, <br>
+              <sup>&#128231;</sup><a href="https://scholar.google.com/citations?user=rHagaaIAAAAJ&hl=zh-CN&oi=ao">Meng Wang</a><sup>1</sup>, 
+              <sup>&#128231;</sup><a href="https://scholar.google.com/citations?user=E9NVOBUAAAAJ&hl=zh-CN&oi=sra">Yiran Zhong</a><sup>2,7</sup>
+              <h6 class="text-muted" style="text-align:center;">
+              <h6 class="text-muted" style="text-align:center;">
+                <ul>
+                    <sup>1</sup>Hefei University of Technology, 
+                    <sup>2</sup>Sensetime Research, <br>
+                    <sup>3</sup>Australian National University,
+                    <sup>4</sup>Beihang University,
+                    <sup>5</sup>NVIDIA, <br>
+                    <sup>6</sup>The University of Hong Kong,
+                    <sup>7</sup>Shanghai Artificial Intelligence Laboratory
+                </ul>
+              </h6>
+            </ul>
+        </h5>
+        <p class="text-muted" style="text-align:center; color:#00F">
+          <a href="{{ site.baseurl }}/static/files/2022_Arxiv_AVS.pdf">[Paper]&nbsp;
+          <a href="https://arxiv.org/pdf/2207.05042.pdf" style="color:#ffc107">[Paper]</a>&nbsp;
+            <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA-supp.pdf">[Supplementary]</a>&nbsp;
+            <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA-poster.pdf">[Poster]</a>&nbsp;
+            <a href="https://www.youtube.com/watch?v=jn_4iabJcZw">[Video]</a>&nbsp;
+            <a href="https://www.bilibili.com/video/BV1Br4y1q7YN/">[Video]</a>&nbsp;
+            <a href="https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing" style="color:#ffc107">[Dataset]</a>&nbsp;
+            <a href="https://github.com/OpenNLPLab/AVSBench" style="color:#ffc107">[Code]</a>
+        </p>
+      </div>
+    </div>
+    <hr /> -->
+
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">Update</h2>
+        <h5 class="text-muted" style="text-align:left;">
+          <ul>
+              <li>13 Jul 2022: We are preparing the AVSBench-v2 which is 10 times larger than AVSBench.
+              <li>11 Jul 2022: The dataset has been uploaded to <a href="https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT"><b>Google Drive</b></a> and <a href="https://pan.baidu.com/s/1dEGrP44yw03rXhOaIj0tlA">Baidu Netdisk</a> (password: shsr), welcome to download and use!</li>
+              <!-- <li>28 Mar 2022: Camera-ready version has been released <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA.pdf">here</a>!</li> -->
+              <li>10 Jul 2022: The AVSBench dataset has been released, please see <font color="danger">Download</font> for details.</li>
+              <li>10 Jul 2022: Code has been released <a href="https://github.com/OpenNLPLab/AVSBench">here</a>!</li>
+              <li>08 Jul 2022: Our paper is accepted for ECCV-2022. Camera-ready version and code will be released soon!</li>
+          </ul>
+        </h5>
+      </div>  
+    </div>
+
+    <br/>
+
+    
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading">Audio-Visual Segmentation task</h3>
+          <p  class="text-muted" style="text-align:justify">
+            Hearing and sight are the two most important sensors for humans to perceive the world. Audio and visual signals are usually coexisting and complementary. For example, when we hear a dog bark or a siren wail,
+            we might see a dog or ambulance around accordingly.
+            Recently, audio-visual representation learning has attracted lots of attention and spawned some interesting tasks, such as Audio-Visual Correspondence (AVC), Audio-Visual Event Localization (AVEL) and video parsing (AVVP), Sound Source Localization (SSL), etc. <br>
+            In this study, we explore the <b><font color="blue">Audio-Visual Segmentation (AVS) problem that aims to generate pixel-level segmentation map of the object(s) that produce sound at the time of the image frame.</font></b>
+            An illustration of the AVS task is shown in Figure 1. It is a fine-grained audio-visual learning problem, the pixel-level audio-visual correspondence/correlation/matching is supposed to learn.
+            To facilitate this research, we propose the AVSBench dataset (details are introduced in the next section). With AVSBench, <b>we study two settings of AVS:</b> 1) semi-supervised single sound source segmentation (S4); 2) fully-supervised multiple sound source segmentation (MS3).
+          </p>
+          <!-- <center><img src="{{ site.baseurl }}/static/img/avsbench/comparison_avs_ssl.png" alt="" style="width:100%;  margin-top:8px; margin-bottom:15px;"></center> -->
+      </div>
+    </div>
+
+    <figure class="text-muted" style="text-align:justify">
+      <img src="{{ site.baseurl }}/static/img/avsbench/comparison_avs_ssl.png" style="width: 100%" class="img-responsive"/> 
+      <figcaption><b>Figure 1. Comparison of the proposed AVS task with the SSL task.</b> Sound source localization (SSL) estimates a rough location of the sounding objects in the
+        visual frame, at a patch level. We propose AVS to estimate pixel-wise segmentation masks for all the sounding objects, no matter the number of visible sounding objects. Left: Video of dog barking. Right: Video with two sound sources (man and piano).</figcaption>
+   </figure>
+
+
+    <!-- <div class="row">
+      <div class="col-md-12">
+          <h3 class="section-heading text-uppercase">AVSBench dataset</h3>
+          <p class="text-muted">
+            To the best of our knowledge, AVSBench dataset is the first public pixel-level audio-visual segmentation benchmark that provides ground truth labels for sounding
+            objects. We divide our AVSBench dataset into two subsets, depending on the number of sounding objects in the video (single- or multi-source). Some video examples are shown below.
+          <center><img src="{{ site.baseurl }}//static/img/avsbench/avsbench_video_samples.png" alt="" style="width:100%;  margin-top:8px; margin-bottom:15px;"></center>
+          </p>
+          
+          <p class="text-muted">
+            <b>[Note]</b> In practice, for the Multi-source set, it contains some videos in which multiple objects are visible in the video frames but not all of the objects are emitting sounds.
+             We think that the model is still required to distinguish which object is producing sound and segment the correct one from the multiple potential sound sources.
+          </p>
+      </div>
+    </div> -->
+
+    <br/>
+
+    <!-- <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; text-align: center;">
+        <img src="{{ site.baseurl }}/static/static/img/avsbench/avsbench_statistics.png" style="height=30px" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+        <b>AVSBench statistics. </b> The videos are split into train/valid/test. The asterisk (*) indicates that, for Single-source training, one annotation per video is provided all others contain 5 annotations per video. (Since there are 5 clips per video, this is 1 annotation per clip.) Together, these yield the total annotated frames
+      </p>
+    </div>
+    <br/>
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; text-align: center;">
+        <img src="{{ site.baseurl }}/static/img/avsbench/comparison_avsbench_with_other_datasets.png" style="height=30px" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+        <b>Existing audio-visual dataset statistics. </b> Each benchmark is shown with the number of videos and the annotated frames. The final column indicates whether the frames are labeled by category, bounding boxes, or pixel-level masks
+      </p>
+    </div>
+    <br/> -->
+
+    <!-- <div class="row">
+      <div class="col-lg-12">
+        <h3 class="section-heading text-uppercase">What is MUSIC-AVQA dataset?</h3>
+            <p class="text-muted">
+              To explore scene understanding and spatio-temporal reasoning over audio and visual modalities, we build a largescale audio-visual dataset, MUSIC-AVQA, which focuses on question-answering task. As noted above, high-quality datasets are of considerable value for AVQA research.
+            </p>
+            <p class="text-muted">
+              <b>Why musical performance? </b>Considering that musical performance is a typical multimodal scene consisting of abundant audio and visual components as well as their interaction, it is appropriate to be utilized for the exploration of effective audio-visual scene understanding and reasoning.
+            </p>
+        </h5>
+      </div>
+    </div> -->
+
+
+
+    <!-- <div class="row">
+      news column 
+      <div class="col-md-4">
+        <h4 class="service-heading">Basic informations</h4>
+        <p class="text-muted">We choose to manually collect amounts of musical performance videos from YouTube. Specifically, 22 kinds of instruments, such as guitar, cello, and xylophone, are selected and 9 audio-visual question types are accordingly designed, which cover three different scenarios, i.e., audio, visual and audio-visual. Annotations are collected using a novel by our GSAI-Labeled system.</p>
+
+      </div>
+      characteristics column
+      <div class="col-md-4">
+        <h4 class="service-heading">Characteristics</h4>
+        <ul class="text-muted">
+          <li class="text-muted">3 typical multimodal scene</li>
+          <li class="text-muted">22 kinds of instruments</li>
+          <li class="text-muted">4 categories: String, Wind, Percussion and Keyboard.</li>
+          <li class="text-muted"><b>9,290</b> videos for over <b>150</b> hours</li>
+          <li class="text-muted">7,423 real videos</li>
+          <li class="text-muted">1,867 synthetic videos</li>
+          <li class="text-muted">9 audio-visual question types</li>
+          <li class="text-muted"><b>45,867</b> question-answer pairs</li>
+          <li class="text-muted">Diversity, complexity and dynamic</li>
+        </ul>
+      </div>
+
+      udated column
+      <div class="col-md-4">
+        <h4 class="service-heading">Personal data/Human subjects</h4>
+        <ul class="text-muted">
+          <p class="text-muted">Videos in AVSBench are public on YouTube, and annotated via crowdsourcing. We have explained how the data would be used to crowdworkers. Our dataset does not contain personally identifiable information or offensive content.</p>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <video autoplay muted loop width="100%">
+          <source src="{{ site.baseurl }}/static/videos/03x03_videoWall.webm" type="video/webm">
+            <source src="{{ site.baseurl }}/static/videos/music_avqa_720p.mp4" type="video/mp4">
+              <source src="{{ site.baseurl }}/static/videos/music_avqa_720p.mp4" type="video/mp4">
+                Sorry, we cannot display the MUSIC-AVQA video wall as your browser doesn't support HTML5 video.
+        </video>
+      </div>
+    </div> -->
+    <!-- video banner row -->
+      
+       
+  </div>
+</section>
+
+<!-- Stats -->
+<section id="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">AVSBench Dataset</h2>
+        <h3 class="section-subheading text-muted">Some statistics and samples of our dataset and annotations</h3>
+      </div>
+    </div>
+
+
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; text-align: center;">
+        <p class="text-muted" style="text-align:justify">
+          To the best of our knowledge, AVSBench is the first open pixel-level audio-visual segmentation dataset that provides ground truth labels for sounding
+          objects. We divide our AVSBench dataset into two subsets, depending on the
+          number of sounding objects in the video (single- or multi-source). <b>[Note]</b> In practice, for the Multi-source set, it may contain some videos where multiple objects are visible in the video frame but not all of the objects are emitting sounds.
+          We think these videos are still helpful because the model is still required to distinguish which object is producing sound and segment the correct one from the multiple potential sound sources.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem; text-align: center;">
+        <p class="text-muted" style="text-align:justify">
+          <b>AVSBench statistics. </b> The videos are split into train/valid/test. The asterisk (*) indicates that, for Single-source training, one annotation per video is provided all others contain 5 annotations per video. (Since there are 5 clips per video, this is 1 annotation per clip.) Together, these yield the total annotated frames.
+        </p>
+        <!-- <img src="{{ site.baseurl }}/static/img/avsbench/avsbench_statistics.png" style="height:50%" class="img-responsive"/>  -->
+      </div>
+    </div>
+    <!-- <br/> -->
+
+    <figure class="text-muted" style="text-align:justify">
+      <img src="{{ site.baseurl }}/static/img/avsbench/avsbench_statistics.png" style="width:100%" class="img-responsive"/> 
+   </figure>
+
+
+    <div class="row justify-content-md-left text-center">
+      <p class="text-muted" style="padding:1rem; text-align:justify">
+        For the Single-source subset, the detailed video categories and video numbers of each category are displayed in Figure 2.
+      </p>
+    </div>
+    <!-- <br/> -->
+    <figure class="text-muted" style="text-align:justify">
+      <img src="{{ site.baseurl }}/static/img/avsbench/single-source-set-statistics.png" style="width: 100%" class="img-responsive"/> 
+      <figcaption><b>Figure 2. Statistics of the whole Single-source subset of AVSBench.</b> The texts represent the category names. For example, the 'helicopter' category contains 311 video samples.
+      </figcaption>
+   </figure>
+
+
+    <div class="row justify-content-md-left text-center">
+      <p class="text-muted" style="padding:1rem; text-align:justify">
+        <b>Existing audio-visual dataset statistics. </b> Each benchmark is shown with the number of videos and the annotated frames. The final column indicates whether the frames are labeled by category, bounding boxes, or pixel-level masks.
+      </p>
+      <!-- <div class="col-md centered" style="padding:1rem; text-align: center;">
+        <img src="{{ site.baseurl }}/static/img/avsbench/comparison_avsbench_with_other_datasets.png" style="height: 80%" class="img-responsive"/> 
+      </div> -->
+    </div>
+
+    <figure class="text-muted" style="text-align:justify">
+      <img src="{{ site.baseurl }}/static/img/avsbench/comparison_avsbench_with_other_datasets.png" style="width: 100%" class="img-responsive"/> 
+   </figure>
+
+    <!-- <br/> -->
+
+
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md-12" style="text-align:left">
+        <!-- <h4 class="section-subheading" style="text-align:left; margin-left:-14px">More video examples</h4> -->
+      </div>
+      <hr/>
+      <p class="text-muted" style="text-align:left">
+        <b>Some video samples in the AVSBench dataset.</b>
+        Through these examples, we can have a better understanding of the dataset and the AVS task.
+      </p>
+      <p class="text-muted" style="text-align:left; margin-right: 10px;">
+
+        <!-- example 1-3 -->
+        <table>
+          <tr>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" height="240" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/single_source/p04SYXuBSQ.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/single_source/QYbisnpKlQ.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" height="240" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/single_source/GrqTKuk8x4.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+        </table>
+
+        <!-- example 4-6 -->
+        <table>
+          <tr>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" height="210" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/single_source/0BLiYNtFSjA.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/multi_sources/0meOlo03O3g.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+            <td style="width:1%"></td>
+            <td style="width:31%">
+              <video width="100%" controls="controls">
+                <source src="{{ site.baseurl }}/static/videos/multi_sources/2IoF4ClnbPk.mp4" align="left" type="video/mp4">
+              </video>
+            </td>
+          </tr>
+        </table>
+
+          <!-- example 7-9 -->
+          <table>
+            <tr>
+              <td style="width:1%"></td>
+              <td style="width:31%">
+                <video width="100%" controls="controls">
+                  <source src="{{ site.baseurl }}/static/videos/multi_sources/CbQ2Ap7Phsw.mp4" align="left" type="video/mp4">
+                </video>
+              </td>
+              <td style="width:1%"></td>
+              <td style="width:31%">
+                <video width="100%" controls="controls">
+                  <source src="{{ site.baseurl }}/static/videos/multi_sources/O7xnnBye7RM.mp4" align="left" type="video/mp4">
+                </video>
+              </td>
+              <td style="width:1%"></td>
+              <td style="width:31%">
+                <video width="100%" controls="controls">
+                  <source src="{{ site.baseurl }}/static/videos/multi_sources/YYbShzoZWRo.mp4" align="left" type="video/mp4">
+                </video>
+              </td>
+            </tr>
+          </table>
+       
+      </p>
+    </div>
+
+
+<!--     <div class="row justify-content-md-center text-center">
+      <div class="col-md-12" style="text-align:left">
+        <h4 class="section-subheading" id="downloadFiles">QA pairs samples</h4>
+      </div>
+      <hr/> -->
+    <!--   <div class="text-muted" style="text-align:left">
+      
+      </div> -->
+<!--       <hr/>
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="{{ site.baseurl }}/static/img/stats-figures/st_avqa_pairs.png" style="width: 100%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left">
+        The large-scale spatial-temporal audio-visual dataset that focuses on question-answering task, as shown in:
+      </p>
+    </div> -->
+
+<!--     <div class="row justify-content-md-center text-center">
+    <div class="col-md-12">
+      <h4 class="section-subheading" id="downloadFiles">How was MUSIC-AVQA dataset made?</h4>
+        <div class="col-md centered" style="padding:1rem;">
+          <img src="{{ site.baseurl }}/static/img/stats-figures/annotation_framework.png" style="width: 100%" class="img-responsive"/> 
+        </div>
+        <p>
+          <b>Flow chart of the labeling system.</b> Labeling system contains questioning and answering. In the questioning section, the annotator is required to select the performance type of the video and the included instruments, and then scene types, question types, and question templates, and finally one question is automatically generated based on the previous selection. In the answering part, the annotator to judge whether the question is reasonable, and if it is unreasonable, the question will be labeled again. Then, the annotator answering the question according to video content, and finally one QA pair is produced.
+        </p>
+        <hr/>
+    </div>
+    </div> -->
+
+
+    <!-- <br/><br/> -->
+<!--     <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="{{ site.baseurl }}/static/img/stats-figures/stat2.png" style="width: 100%" class="img-responsive"/> 
+      </div>
+    </div>
+
+    <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="{{ site.baseurl }}/static/img/stats-figures/stat3.png" style="width: 100%" class="img-responsive"/> 
+        <h4>Distribution</h4>
+      </div>
+    </div> -->
+      
+
+
+      <!-- <div class="col-md-6 centered" style="padding:1rem; vertical-align:bottom"> -->
+        <!-- TO ADD GRAPH: replace div below, ex: above <img> tag -->
+        <!-- <img src="{{ site.baseurl }}/static/img/stats-figures/masks.png" style="width: 100%" class="img-responsive"/>   -->
+        <!-- <h4>Automatic Annotations</h4> -->
+      <!-- </div> -->
+    </div>
+
+    <!-- <div class="row justify-content-md-center text-center">
+      <div class="col-md-4 centered" style="padding:1rem;">
+      <div id="graph4" style="width: 100%" class="img-responsive"></div>
+      <h4>Resolution</h4>
+      </div>
+      <div class="col-md-4 centered" style="padding:1rem;">
+      <div id="graph5" style="width: 100%" class="img-responsive"></div>
+      <h4>Number of Frames</h4>
+      </div>
+      <div class="col-md-4 centered" style="padding:1rem;">
+      <div id="graph6" style="width: 100%" class="img-responsive"></div>
+      <h4>Total number of hours</h4>
+      </div>
+      </div>
+      <div class="row justify-content-md-center text-center">
+      <div class="col-md-4 centered" style="padding:1rem;">
+      <div id="graph7" style="width: 100%" class="img-responsive"></div>
+      <h4>Number of annotators<br/>used per video</h4>
+      </div>
+      <div class="col-md-4 centered" style="padding:1rem;">
+      <div id="graph8" style="width: 100%" class="img-responsive"></div>
+      <h4>Splits</h4>
+      </div>
+      </div> -->
+
+      <!-- <div class="col-md-6">
+        <div class="card" style="border: solid 2px; background-color: #373435ff; margin-bottom:5px;">
+        <h1 style=" color: white; text-decoration: underline; text-decoration-color: #ed323eff;"> Baseline Models </h1>
+        <div id="graph9"></div>
+        </div>
+
+        <div class="card" style="border: solid 2px; background-color: #ed323eff;">
+        <h1 style=" color: white; text-decoration: underline; text-decoration-color: #373435ff;"> State of the Art Results </h1>
+        <div id="graph10"></div>
+        </div>
+
+        </div> -->
+  </div>
+</section>
+
+
+
+
+<section class="bg-light" id="downloads">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading">Download</h2>
+        <h3 class="section-subheading text-muted">Dataset publicly available for research purposes</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12" style="text-align:justify"> 
+        <h4 class="section-subheading" id="downloadFiles">Data and Download </h4><hr/>
+        <p>
+          The csv file that contains the video ids for downloading the raw YouTube videos and the annoated ground truth segmentation maps can be downloaded from following links :
+          <ul>
+          - <a href="https://pan.baidu.com/s/1dEGrP44yw03rXhOaIj0tlA">Baidu Netdisk</a> <b>(password: shsr)</b> <br>
+          - <a href="https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing">Google Drive</a>
+          </ul>
+          For the processed videos and audios: <br>
+          <ul>
+          - Please send an email to <a href="zhoujxhfut@gmail.com">zhoujxhfut@gmail.com</a>, with your name and institution.<br>
+          - We also provide some scripts to process the raw video data and extract the frames/mel-spectrogram features at our <a href="https://github.com/OpenNLPLab/AVSBench">Github repository</a>.
+          </ul>
+        </p>          
+        <br/>
+      </div>
+    </div>
+
+
+    <br/>
+    <div class="row">
+      <div class="col-md-12" style="text-align:justify">
+        <h4 class="section-subheading">Copyright <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png"/></h4>
+        <p>
+          The AVSBench dataset on this page is copyright by us and published under the <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International</a> License. This means that  you must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. You may not use the material for commercial purposes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Benchmark -->
+<section id="challenges">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-12 text-center" style="text-align:justify">
+        <h2 class="section-heading ">A Simple Baseline for AVS Task</h2>
+        <!-- <h3 class="section-subheading text-muted">Challenge Details with links to &#9733;NEW&#9733; Codalab Leaderboards</h3> -->
+        <h3 class="section-subheading text-muted">the proposed audio-visual segmentation method, experimental results and simple analysis</h3>
+      </div>
+    </div>
+     
+    <div class="row">
+      <div class="col-md-12" style="text-align:justify">
+        <p class="text-muted" style="text-align:justify">
+          To solve the AVS problem, we propose an end-to-end model that utilizes a standard encoder-decoder architecture but with
+          a new temporal pixel-wise audio-visual interaction (TPAVI) module to better
+          introduce the audio semantics for guiding visual segmentation. We also propose
+          a loss function to utilize the correlation of audio-visual signals, which further
+          enhances segmentation performance.
+          <b>More details are shown in our <a href="https://arxiv.org/pdf/2207.05042.pdf">paper</a></b>.
+          <br/>  
+        </p> 
+      </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-md-12" style="text-align:justify">
+        <h4 class="subheading">Audio-Visual Segmentation Framework</h4>
+        <p class="text-muted" style="text-align:justify">
+          An overview of the proposed framework is illustrated in below figure. 
+          It follows a hierarchical Encoder-Decoder pipeline. The encoder takes the video frames and the entire audio clip as inputs, and
+          outputs visual and audio features, respectively denoted as <i><b>F<sub>i</sub></b></i> and <i><b>A</b></i>. The visual feature
+          map Fi at each stage is further sent to the ASPP module and then our TPAVI
+          module. ASPP provides different receptive fields for recognizing
+          visual objects, while TPAVI focuses on the temporal pixel-wise audio-visual interaction.
+          The decoder progressively enlarges the fused feature maps by four stages and finally
+          generates the output mask <i><b>M</b></i> for sounding objects.
+        </p>
+        
+        <div class="col-md centered" style="padding:0.2rem; text-align:center; margin-bottom:8px">
+        <img src="{{ site.baseurl }}/static/img/avsbench/avs_framework.png" style="width: 100%;" class="img-responsive"/> 
+        </div>
+      </div>
+    </div>
+
+
+    <br/>
+
+
+
+
+    <div class="row">
+      <div class="col-md-12" style="text-align:justify">
+        <h4 class="subheading">Experiments</h4>
+        <p class="text-muted" style="text-align:justify">
+          We first compare the proposed AVS baseline with several methods from related tasks, namely Sound Source Localization (SSL), Video Object Segmentation (VOS), and Salient Object Detection (SOD).
+          The quantative results are shown in the Table below. Our AVS method surpasses all of these methods. Please refer to our <a href="https://arxiv.org/pdf/2207.05042.pdf">paper</a> for more analysis and qualitative results.
+          <!-- <img src="{{ site.baseurl }}/static/img/avsbench/exp_avs_ssl_vos_sod_quan_results.png" align="center" height="60%" class="img-responsive"/> -->
+          <!-- <img src="{{ site.baseurl }}/static/img/avsbench/exp_avs_ssl_vos_sod_quan_results.png" style="width: 100%;" class="img-responsive"/> -->
+        </p>
+
+        <figure class="text-muted" style="text-align:justify">
+          <img src="{{ site.baseurl }}/static/img/avsbench/exp_avs_ssl_vos_sod_quan_results.png" style="width: 100%;" class="img-responsive"/>
+       </figure>
+
+
+        <div class="col-md centered" style="padding:0.6rem; text-align:center">
+          <p class="text-muted" style="text-align:justify">
+            We then conduct some ablation studies to explore the impact of the audio signal and the TPAVI module. The results are shown below.
+            The middle row indicates directly adding the audio and visual features, which already improves performance under the MS3 setting. The TPAVI module further enhances the results over all settings and backbones.
+            <!-- <img src="{{ site.baseurl }}/static/img/avsbench/exp_impact_of_TPAVI_and_audio.png" style="width: 100%;" class="img-responsive"/>  -->
+          </p>
+        </div>
+
+        <figure class="text-muted" style="text-align:justify">
+          <img src="{{ site.baseurl }}/static/img/avsbench/exp_impact_of_TPAVI_and_audio.png" style="width: 100%;" class="img-responsive"/> 
+       </figure>
+
+        <p class="text-muted" style="text-align:justify">
+          We also display some qualitative examples under the semi-supervised S4 setting and fully-supervised MS3 settings.
+          As shown in Figures 3 and 4, these results indicate that the audio signals provide positive support for segmenting the correct sounding object and outlining better shapes.
+        </p>
+
+        <figure class="text-muted" style="text-align:justify">
+          <img src="{{ site.baseurl }}/static/img/avsbench/exp_qualitative_under_S4_setting.png" style="width: 100%" class="img-responsive"/> 
+          <figcaption><b>Figure 3. Qualitative results under the semi-supervised S4 setting.</b> Predictions
+            are generated by the ResNet50-based AVS model. Two benefits are noticed by introducing the audio signal (TPAVI): 1) learning the shape of the sounding object, e.g.,
+            guitar in the video (Left); 2) segmenting according to the correct sound source, e.g.,
+            the gun rather than the man (Right).
+          </figcaption>
+       </figure>
+
+       <figure class="text-muted" style="text-align:justify">
+        <img src="{{ site.baseurl }}/static/img/avsbench/exp_qualitative_under_MS3_setting.png" style="width: 100%" class="img-responsive"/> 
+        <figcaption><b>Figure 4. Qualitative results under the fully-supervised MS3 setting.</b> 
+          The predictions are obtained by the PVT-v2 based AVS model. Note that AVS with TPAVI
+          uses audio information to perform better in terms of 1) filtering out the distracting
+          visual pixels that do not correspond to the audio, i.e., the human hands (Left); 2)
+          segmenting the correct sound source in the visual frames that matches the audio more
+          accurately, i.e., the singing person (Right).
+        </figcaption>
+     </figure>
+
+     <p class="text-muted" style="text-align:left">
+      In our <a href="https://arxiv.org/pdf/2207.05042.pdf">paper</a>, we provide more experimental results, such as additional comparison with a two-stage baseline, visualization of the audio-visual attention map, segmenting unseen objects, etc.
+      Please refer to the paper for more details.
+    </p>
+
+      </div>
+    </div>
+
+
+    
+    <div class="col-md-12" style="text-align:left">
+      <!-- <div class="col-md-12" style="padding:1rem; text-align:left"> -->
+        <!-- <h4 class="section-subheading" style="text-align:left; margin-left:-14px">More video examples</h4> -->
+      <!-- </div> -->
+      <p class="text-muted" style="text-align:left; text-indent:-16px">
+        <b>Some video segmentation demos.</b>
+        The segmentation maps are generated by the PVT-v2 based AVS model.
+      </p>
+      <!-- <p class="text-muted" style="text-align:left; margin-right: 10px;"> -->
+      <!-- </p> -->
+    </div>
+
+      <!-- example 1-4 -->
+      <table>
+        <tr>
+          <td style="width:1%"></td>
+          <td style="width:19%">
+            <video width="100%" controls="controls">
+              <source src="{{ site.baseurl }}/static/videos/demo/single/ambulance_siren_8Zo30kV5aiI.mp4" align="left" type="video/mp4">
+            </video>
+          </td>
+          <td style="width:1%"></td>
+          <td style="width:19%">
+            <video width="100%" controls="controls">
+              <source src="{{ site.baseurl }}/static/videos/demo/single/chainsawing_trees_0IStDugr5uA.mp4" align="left" type="video/mp4">
+            </video>
+          </td>
+          <td style="width:1%"></td>
+          <td style="width:19%">
+            <video width="100%" controls="controls">
+              <source src="{{ site.baseurl }}/static/videos/demo/single/dog_barking_5csYYtS7Pck.mp4" align="left" type="video/mp4">
+            </video>
+          </td>
+          <td style="width:1%"></td>
+          <td style="width:19%">
+            <video width="100%" height="150" controls="controls">
+              <source src="{{ site.baseurl }}/static/videos/demo/single/lawn_mowing_G4TowkVcclw.mp4" align="left" type="video/mp4">
+            </video>
+          </td>
+        </tr>
+      </table>
+
+  <!-- example 5-8 -->
+  <table>
+    <tr>
+      <td style="width:1%"></td>
+      <td style="width:19%">
+        <video width="100%" controls="controls">
+          <source src="{{ site.baseurl }}/static/videos/demo/multiple/6DR8dA9TDOc1.mp4" align="left" type="video/mp4">
+        </video>
+      </td>
+      <td style="width:1%"></td>
+      <td style="width:19%">
+        <video width="100%" controls="controls">
+          <source src="{{ site.baseurl }}/static/videos/demo/multiple/ElOVPqC_kRc1.mp4" align="left" type="video/mp4">
+        </video>
+      </td>
+      <td style="width:1%"></td>
+      <td style="width:19%">
+        <video width="100%" controls="controls">
+          <source src="{{ site.baseurl }}/static/videos/demo/multiple/esbnrrsznWc2.mp4" align="left" type="video/mp4">
+        </video>
+      </td>
+      <td style="width:1%"></td>
+      <td style="width:19%">
+        <video width="100%" controls="controls">
+          <source src="{{ site.baseurl }}/static/videos/demo/multiple/vlny-m0SIiw3.mp4" align="left" type="video/mp4">
+        </video>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+    <!-- <br/>
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="section-subheading">Citation</h4>
+        <p>If you find our work useful in your research, please cite <a href="https://arxiv.org/pdf/2207.05042.pdf">our ECCV 2022 paper</a>:
+        </p>
+        <pre class="bibtex" style="text-align:left; margin-left:0px">
+        <code>
+        @inproceedings{zhou2022avs,
+            title     = {Audio-Visual Segmentation},
+            author    = {Zhou, Jinxing and Wang, Jianyuan and Zhang, Jiayi and Sun, Weixuan and Zhang, Jing and Birchfield, Stan and Guo, Dan and Kong, Lingpeng and Wang, Meng and Zhong, Yiran},
+            booktitle = {European Conference on Computer Vision},
+            year      = {2022}
+        }
+        </code>
+        </pre>
+      </div>
+    </div>   -->
+
+<!--     <div class="row justify-content-md-center text-center">
+      <div class="col-md centered" style="padding:1rem;">
+        <img src="{{ site.baseurl }}/static/img/stats-figures/stat1.png" style="width: 100%" class="img-responsive"/> 
+      </div>
+      <p class="text-muted" style="text-align:left"><b>Illustrations of our MUSIC-AVQA dataset statistics</b>. <b>(a-d)</b> statistical analysis of the videos and QA pairs. <b>(e)</b> Question formulas. <b>(f)</b> Distribution of question templates, where the dark color indicates the number of QA pairs generated from real videos while the light-colored area on the upper part of each bar means that from synthetic videos. <b>(g)</b> Distribution of first n-grams in questions. Our QA-pairs need <b>fine-grained scene understanding</b> and <b>spatio-temporal reasoning</b> over audio and visual modalities to be solved. For example, existential and location questions require spatial reasoning, and temporal questions require temporal reasoning. Best viewed in color.</p>
+    </div> -->
+      
+   
+    
+    <!-- <div class="row"> -->
+      <!-- <div class="col-md-12"> -->
+        <!-- <h4 class="subheading">Challenges/Leaderboard Details</h4>                    
+
+        <p class="text-muted">        
+        <b>Splits. </b> The dataset is split in train/validation/test sets, with a ratio of roughly 75/10/15. <br/>         
+        The action recognition, detection and anticipation challenges use all the splits. <br/>        
+        The unsupservised domain adaptation and action retrieval challenges use different splits as detailed below. <br/>        
+        
+        You can download all the necessary annotations <a href="https://github.com/epic-kitchens/epic-kitchens-100-annotations" target="_blank">here</a>. <br/>
+        You can find more details about the splits in <a href="https://arxiv.org/pdf/2006.13256.pdf" target="_blank">our paper</a>.
+        </p>
+        
+        <p class="text-muted">
+        <b>Evaluation. </b> All challenges are evaluated considering all segments in the Test split. 
+        The action recognition and anticipation challenges are additionally evaluated considering unseen participants and tail classes. These are automatically evaluated in the scripts and you do not need to do anything specific to report these.<br/>
+        <b>Unseen participants. </b> The validation and test sets contain participants that are not present in the train set. 
+        There are 2 unseen participants in the validation set, and another 3 participants in the test set. 
+        The corresponding action segments are 1,065 and 4,110 respectively. <br/>
+        <b>Tail classes. </b> These are the set of smallest classes whose instances account for 20&#37 of the total number of instances in 
+        training. A tail action class contains either a tail verb class or a tail noun class. 
+        <br/><br/>
+        </p> -->
+        
+        
+        
+        <!-- <section class="challenge" id="challenge-action-detection">
+          <div class="row">
+            <div class="col-md-12">
+              <h5 class="subheading">Action Detection</h5>
+              <p class="text-muted">
+                <b>Task. </b> 
+                Detect the start and the end of each action in an <i>untrimmed</i> video. Assign a (verb, noun) label to each 
+                detected segment. <br/>
+                <b>Training input. </b> A set of trimmed action segments, each annotated with a (verb, noun) label.  <br/>                
+                <b>Testing input. </b> A set of <i>untrimmed</i> videos. <u>Important:</u> You are not allowed to use the knowledge of trimmed segments in the test set when reporting for this challenge.<br/>
+                <b>Splits. </b> Train and validation for training, evaluated on the test split. <br/>
+                <b>Evaluation metrics. </b> Mean Average Precision (mAP) @ IOU 0.1 to 0.5.
+              </p>
+            </div>
+          </div>
+          
+          <div class="details row text-center">
+            <div class="col-md">
+              <a href="https://github.com/epic-kitchens/C2-Action-Detection">
+                <i class="text-center centered fas fa-4x fa-seedling"></i>
+              </a>
+              <br />
+              <p class="text-muted">
+                <a href="https://github.com/epic-kitchens/C2-Action-Detection">Get started</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/707#learn_the_details-submission-format">
+                <i class="text-center centered fas fa-4x fa-info"></i>
+              </a>
+              <br />
+              <p class="text-muted">Learn about the 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/707#learn_the_details-submission-format">submission format details</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/707#results">
+                <i class="text-center centered fas fa-4x fa-trophy"></i>
+              </a>
+              <p class="text-muted">Submit your results on 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/707#results">CodaLab website</a>
+              </p>
+            </div>
+         </div>
+         <figure class="text-muted">
+            <figcaption>Sample qualitative results from the challenge's baseline</figcaption>
+            <img src="{{ site.baseurl }}/static/img/challenges-epic-100/ad.png" style="width: 100%" class="img-responsive"/> 
+         </figure> 
+        </section> -->
+        
+
+        <!-- <section class="challenge" id="challenge-action-anticipation">
+          <div class="row">
+            <div class="col-md-12">
+              <h5 class="subheading">Action Anticipation</h5>
+              <p class="text-muted">
+                <b>Task. </b> 
+                Predict the (verb, noun) label of a future action observing a segment preceding its occurrence. <br/>
+                <b>Training input. </b> A set of trimmed action segments, each annotated with a (verb, noun) label. <br/>
+                <b>Testing input. </b> During testing you are allowed to observe a segment that <i>ends</i> at least one second before 
+                the start of the action you are testing on.<br/>                
+                <b>Splits. </b> Train and validation for training, evaluated on the test split. <br/>
+                <b>Evaluation metrics. </b> Top-5 recall averaged for all classes, as defined <a href="https://openaccess.thecvf.com/content_ECCVW_2018/papers/11133/Furnari_Leveraging_Uncertainty_to_Rethink_Loss_Functions_and_Evaluation_Measures_for_ECCVW_2018_paper.pdf" target="_blank">here</a>,
+                calculated for all segments as well as unseen participants and tail classes.
+                <br/>
+              </p>
+            </div>
+          </div>
+          
+          <div class="details row text-center">
+            <div class="col-md">
+              <a href="https://github.com/epic-kitchens/C3-Action-Anticipation">
+                <i class="text-center centered fas fa-4x fa-seedling"></i>
+              </a>
+              <br />
+              <p class="text-muted">
+                <a href="https://github.com/epic-kitchens/C3-Action-Anticipation">Get started</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/702#learn_the_details-submission-format">
+                <i class="text-center centered fas fa-4x fa-info"></i>
+              </a>
+              <br />
+              <p class="text-muted">Learn about the 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/702#learn_the_details-submission-format">submission format details</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/702#results">
+                <i class="text-center centered fas fa-4x fa-trophy"></i>
+              </a>
+              <p class="text-muted">Submit your results on 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/702#results">CodaLab website</a>
+              </p>
+            </div>
+         </div>
+         <figure class="text-muted">
+            <figcaption>Sample qualitative results from the challenge's baseline</figcaption>
+            <img src="{{ site.baseurl }}/static/img/challenges-epic-100/aa.png" style="width: 100%" class="img-responsive"/> 
+         </figure>
+        </section> -->
+        
+        <!-- <section class="challenge" id="challenge-domain-adaptation">
+          <div class="row">
+            <div class="col-md-12">
+              <h5 class="subheading">Unsupervised Domain Adaptation for Action Recognition</h5>
+              <p class="text-muted">
+                <b>Task. </b> Assign a (verb, noun) label to a trimmed segment, following the Unsupervised Domain Adaptation paradigm: 
+                a labelled source domain is used for training, and the model needs to adapt to an unlabelled target domain. <br/>
+                <b>Training input. </b> A set of trimmed action segments, each annotated with a (verb, noun) label.  <br/>                
+                <b>Testing input. </b> A set of trimmed unlabelled action segments. <br/>
+                <b>Splits. </b> Videos recorded in 2018 (EPIC-KITCHENS-55) constitute the source domain, 
+                while videos recorded for MUSIC-AVQA's extension constitute the unlabelled target domain. 
+                This challenge uses custom train/validation/test splits, which you can find 
+                <a href="https://github.com/epic-kitchens/epic-kitchens-100-annotations#unsupervised-domain-adaptation-challenge" target="_blank">here</a>. <br/> 
+                <b>Evaluation metrics. </b> Top-1/5 accuracy for verb, noun and action (verb+noun), on the target test set.
+              </p>
+            </div>
+          </div>
+          
+          <div class="details row text-center">
+            <div class="col-md">
+              <a href="https://github.com/epic-kitchens/C4-UDA-for-Action-Recognition">
+                <i class="text-center centered fas fa-4x fa-seedling"></i>
+              </a>
+              <br />
+              <p class="text-muted">
+                <a href="https://github.com/epic-kitchens/C4-UDA-for-Action-Recognition">Get started</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/1241#learn_the_details-submission-format">
+                <i class="text-center centered fas fa-4x fa-info"></i>
+              </a>
+              <br />
+              <p class="text-muted">Learn about the 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/1241#learn_the_details-submission-format">submission format details</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/1241#results">
+                <i class="text-center centered fas fa-4x fa-trophy"></i>
+              </a>
+              <p class="text-muted">Submit your results on 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/1241#results">CodaLab website</a>
+              </p>
+            </div>
+         </div>
+         <figure class="text-muted">
+            <figcaption>Sample qualitative results from the challenge's baseline</figcaption>
+            <img src="{{ site.baseurl }}/static/img/challenges-epic-100/uda.png" style="width: 100%" class="img-responsive"/> 
+         </figure>
+        </section>-->
+
+
+        <!-- <section class="challenge" id="challenge-action-retrieval">
+          <div class="row">
+            <div class="col-md-12">
+              <h5 class="subheading">Multi-Instance Retrieval</h5>
+              <p class="text-muted">
+                <b>Tasks. </b> <i>Video to text</i>: given a query video segment, rank captions such that those with a higher rank are 
+                more semantically relevant to the action in the query video segment. 
+                <i>Text to video:</i> given a query caption, rank video segments such that those with a higher rank are more semantically relevant 
+                to the query caption. <br/>                                
+                <b>Training input. </b> A set of trimmed action segments, each annotated with a caption. 
+                Captions correspond to the narration in English from which the action segment was obtained. <br/>                
+                <b>Testing input. </b> A set of trimmed action segments with captions. Important: You are not allowed to use the known correspondence in the Test set <br/>
+                <b>Splits. </b> This challenge has its own custom splits, available <a href="https://github.com/epic-kitchens/epic-kitchens-100-annotations/tree/master/retrieval_annotations">here</a>. <br/>                
+                <b>Evaluation metrics. </b> normalised Discounted Cumulative Gain (nDCG) and Mean Average Precision (mAP). 
+                You can find more details in <a href="https://arxiv.org/pdf/2006.13256.pdf" target="_blank">our paper</a>. 
+              </p>
+            </div>
+          </div>
+          
+          <div class="details row text-center">
+            <div class="col-md">
+              <a href="https://github.com/epic-kitchens/C5-Multi-Instance-Retrieval">
+                <i class="text-center centered fas fa-4x fa-seedling"></i>
+              </a>
+              <br />
+              <p class="text-muted">
+                <a href="https://github.com/epic-kitchens/C5-Multi-Instance-Retrieval">Get started</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/617#learn_the_details-submission-format">
+                <i class="text-center centered fas fa-4x fa-info"></i>
+              </a>
+              <br />
+              <p class="text-muted">Learn about the 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/617#learn_the_details-submission-format">submission format details</a>
+              </p>
+            </div>
+            <div class="col-md">
+              <a href="https://codalab.lisn.upsaclay.fr/competitions/617#results">
+                <i class="text-center centered fas fa-4x fa-trophy"></i>
+              </a>
+              <p class="text-muted">Submit your results on 
+                <a href="https://codalab.lisn.upsaclay.fr/competitions/617#results">CodaLab website</a>
+              </p>
+            </div>
+         </div>
+         <figure class="text-muted">
+            <figcaption>Sample qualitative results from the challenge's baseline</figcaption>
+            <img src="{{ site.baseurl }}/static/img/challenges-epic-100/aret.png" style="width: 100%" class="img-responsive"/> 
+         </figure>
+          
+        </section> -->
+        
+      <!-- </div>
+    </div> -->
+    
+  </div>
+</section> 
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="section-heading">Citation</h3>
+          <div class="text-muted">
+            <p>If you find our work useful in your research, please cite <a href="https://arxiv.org/pdf/2207.05042.pdf">our ECCV 2022 paper</a>:
+            </p>
+            <pre class="bibtex" style="text-align:left; margin-left:0px">
+            <code>
+            @inproceedings{zhou2022avs,
+                title     = {Audio-Visual Segmentation},
+                author    = {Zhou, Jinxing and Wang, Jianyuan and Zhang, Jiayi and Sun, Weixuan and Zhang, Jing and Birchfield, Stan and Guo, Dan and Kong, Lingpeng and Wang, Meng and Zhong, Yiran},
+                booktitle = {European Conference on Computer Vision},
+                year      = {2022}
+            }
+            </code>
+            </pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="section-heading">Acknowledgement</h3>
+          <div class="text-muted">
+              <ul class="text-muted">
+                <li>Thanks to all the co-authors for the helpful discussion and suggestions.</li>
+                <li>Thanks to all the anonymous reviewers for their valuable suggestions and feedback.</li>
+                <li>Thanks to the SenseTime Research for providing access to the GPUs used for conducting experiments.</li>
+                <li>Thanks to <a href="https://ayameyao.github.io/">Guangyao</a> for sharing this website template.</li>
+              </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<!-- </section> -->
+
+
+<!--<section class="bg-light" id="results">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-heading text-uppercase">Results - 2021 Challenges (June 2021)</h2>
+        <div class="text-muted">
+            <div class="row">
+      <div class="col-md-12">
+        <h4 class="subheading">EPIC-Kitchens Challenges @CVPR2021, Virtual CVPR</h4>
+        <div class="row">
+           <div class="col-md-3">
+                Jan 1, 2021
+            </div>
+            <div class="col-md-9">
+                EPIC-Kitchens Challenges 2020 Launched!
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                June 1, 2021
+            </div>
+            <div class="col-md-9">
+                Server Submission Deadline at 23:59:59 GMT
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-md-3">
+                Jun 4, 2020
+            </div>
+            <div class="col-md-9">
+                Deadline for Submission of Technical Reports
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-md-3">
+                June 20, 2020
+            </div>
+            <div class="col-md-9">
+                Results announced at <a href="https://eyewear-computing.org/EPIC_CVPR21/">EPIC@CVPR2021</a> Workshop (<a href="https://youtu.be/FSn8yCbpcc4">watch session recording here</a>)
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-md-3">
+                July 6, 2021
+            </div>
+            <div class="col-md-9">
+                Technical report for all submissions to the 2021 challenges is now <a href="Reports/EPIC-KITCHENS-Challenges-2021-Report.pdf">available here</a> [Reference <a href="./Reports/2021-bibtex.txt">Bibtex</a>].
+            </div>
+        </div>  
+      </div>
+    </div>
+            
+        <h2 class="section-heading text-uppercase">2021 Challenge Winners</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/winnersList-2021.png" width=100%/>
+                  </div>
+                   <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/winners-2021.png" width=100%/>
+                  </div>
+            
+          <h2 class="section-heading text-uppercase">Action Recognition Challenge - 2021</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/AR.png" width=100%/>
+                  </div>
+           <h2 class="section-heading text-uppercase">Action Anticipation Challenge - 2021</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/AN.png" width=100%/>
+                  </div>
+          <h2 class="section-heading text-uppercase">Action Detection Challenge - 2021</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/AD.png" width=100%/>
+                  </div>
+             <h2 class="section-heading text-uppercase">Unsupervised Domain Adaptation for Action Recognition Challenge - 2021</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/UDA.png" width=100%/>
+                  </div>
+            
+             <h2 class="section-heading text-uppercase">Multi-Instance Retrieval Challenge - 2021</h2> 
+            
+                  <div class="col-md">
+                    <img src="{{site.baseurl}}/static/results2021/MIR.png" width=100%/>
+                  </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>-->
+
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org/",
+  "@type":"Dataset",
+  "name":"MUSIC-AVQA dataset",
+  "description":"First-person (egocentric) video dataset; multi-faceted non-scripted recordings in the wearers' homes, capturing all daily activities in the kitchen over multiple days. Annotations are collected using a novel live audio commentary approach.",
+  "url":"https://github.com/epic-kitchens/annotations",
+  "sameAs":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d",
+  "citation":"Damen, Dima et al. 'Scaling Egocentric Vision: The EPIC-KITCHENS Dataset', European Conference on Computer Vision, 2018",
+  "identifier": "10.5523/bris.3h91syskeag572hl6tvuovwv4d",
+  "keywords":[
+     "Egocentric vision",
+     "Human actions",
+     "Object interactions",
+     "actions",
+     "video",
+     "kitchens",
+     "cooking",
+     "dataset",
+     "epic kitchens",
+     "epic",
+     "eccv",
+     "2022"
+  ],
+  "creator":{
+     "@type":"Organization",
+     "url": "https://epic-kitchens.github.io/",
+     "name":"EPIC Team",
+     "contactPoint":{
+        "@type":"ContactPoint",
+        "contactType": "technical support",
+        "email":"uob-epic-kitchens@bristol.ac.uk",
+        "url":"https://github.com/epic-kitchens/annotations/issues"
+     }
+  },
+  "distribution":[
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"video/mp4",
+        "contentUrl":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"image/jpeg",
+        "contentUrl":"https://data.bris.ac.uk/data/dataset/3h91syskeag572hl6tvuovwv4d"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"text/csv",
+        "contentUrl":"https://github.com/epic-kitchens/annotations"
+     },
+     {
+        "@type":"DataDownload",
+        "encodingFormat":"application/octet-stream",
+        "contentUrl":"https://github.com/epic-kitchens/annotations"
+     }
+  ],
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/"
+}
+</script>
+

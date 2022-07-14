@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ page.title }}</title>
+
+    <link href="{{site.baseurl}}/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Kaushan+Script|Droid+Serif:400,700,400italic,700italic|Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{{site.baseurl}}/static/css/agency.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41410283-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-41410283-2');
+    </script>
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:10em;" src="{{ site.baseurl }}/static/img/logo/epic-kitchens-logo-red-side.svg" alt="Logo"></a> -->
+        <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img style="width:10em;" src="{{ site.baseurl }}/static/img/logo/music-avqa-logo-2.png" alt="Logo"></a> -->
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"> </a>
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#stats">Dataset</a>
+            </li>
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#downloads">Downloads</a>
+            </li>
+            <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#challenges">Method</a>
+            </li>
+            <!-- <li class="nav-item" style="font-size: 110%">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="section-heading" style="text-align:center; color: #fafafa;">Audio-Visual Segmentation</h3>
+              <h3 class="section-heading text-uppercase" style="text-align:center; color:#20c997">[ECCV 2022]</h3>
+              <h4 class="text-muted" style="text-align:center;">
+                <ul style="color:#eee">
+                    <sup>*</sup>Jinxing Zhou<sup>1,2</sup>, 
+                    <sup>*</sup>Jianyuan Wang<sup>3</sup>, 
+                    Jiayi Zhang<sup>2,4</sup>, 
+                    Weixuan Sun<sup>2,3</sup>, <br>
+                    Jing Zhang<sup>3</sup>, 
+                    Stan Birchfield<sup>5</sup>
+                    Dan Guo<sup>1</sup>, 
+                    Lingpeng Kong<sup>6,7</sup>, <br>
+                    <!-- <sup>&#128231;</sup>Meng Wang<sup>1</sup>,  -->
+                    <!-- <sup>&#128231;</sup>Yiran Zhong<sup>2,7</sup> -->
+                    <sup>&#128231;</sup><a href="https://scholar.google.com/citations?user=rHagaaIAAAAJ&hl=zh-CN&oi=ao">Meng Wang</a><sup>1</sup>, 
+                    <sup>&#128231;</sup><a href="https://scholar.google.com/citations?user=E9NVOBUAAAAJ&hl=zh-CN&oi=sra">Yiran Zhong</a><sup>2,7</sup>
+                    <!-- <h6 class="text-muted" style="text-align:center;"> -->
+                    <h5 class="text-muted" style="text-align:center;">
+                      <ul style="color:#eee">
+                          <sup>1</sup>Hefei University of Technology, 
+                          <sup>2</sup>SenseTime Research, <br>
+                          <sup>3</sup>Australian National University,
+                          <sup>4</sup>Beihang University,
+                          <sup>5</sup>NVIDIA, <br>
+                          <sup>6</sup>The University of Hong Kong,
+                          <sup>7</sup>Shanghai Artificial Intelligence Laboratory <br>
+                          (<sup>*</sup>Equal contribution, <sup>&#128231;</sup>Corresponding author)
+                      </ul>
+                    </h5>
+                  </ul>
+              </h4>
+              <h4>
+                <p class="text-muted" style="text-align:center; color:#00F">
+                  <!-- <a href="{{ site.baseurl }}/static/files/2022_Arxiv_AVS.pdf">[Paper]&nbsp; -->
+                  <a href="https://arxiv.org/pdf/2207.05042.pdf" style="color:#ffc107">[Paper]</a>&nbsp;
+                    <!-- <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA-supp.pdf">[Supplementary]</a>&nbsp; -->
+                    <!-- <a href="{{ site.baseurl }}/static/files/MUSIC-AVQA-poster.pdf">[Poster]</a>&nbsp; -->
+                    <!-- <a href="https://www.youtube.com/watch?v=jn_4iabJcZw">[Video]</a>&nbsp;
+                    <a href="https://www.bilibili.com/video/BV1Br4y1q7YN/">[Video]</a>&nbsp; -->
+                    <a href="https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing" style="color:#ffc107">[Dataset]</a>&nbsp;
+                    <a href="https://github.com/OpenNLPLab/AVSBench" style="color:#ffc107">[Code]</a>
+                </p>
+              </h4>
+            </div>
+          </div>
+          <hr />
+          <!-- <hr /> -->
+
+        </div>
+      </div>
+    </header>
+
+
+
+
+    {{content}}
+
+<!--     <div style="position: fixed; bottom: 30px; right:10px;">
+    <a href=""> <img src="{{ site.baseurl }}/static/img/logo/cn.png" /> </a>
+    </div> -->
+
+    
+    <!-- Footer -->
+    <footer style="background-color:#373435ff;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="Creative Commons License" style="border-width:1px;float:left;margin-right:15px;margin-bottom:0px;" src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"/>
+            <span class="copyright" style="color:#eee;">Copyright &copy; Jinxing Zhou</span>
+          </div>
+          <div class="col-md-8">
+            <p style="color:#eee;">For any questions, please send an email to
+              <a href="mailto:zhoujxhfut@gmail.com"> zhoujxhfut@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{site.baseurl}}/static/vendor/jquery/jquery.min.js"></script>
+    <script src="{{site.baseurl}}/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{site.baseurl}}/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="{{site.baseurl}}/static/js/agency.min.js"></script>
+
+  </body>
+</html>
