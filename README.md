@@ -6,7 +6,7 @@ This paper proposes the audio-visual segmentation problem and the AVSBench datas
 
 
 ### Update
-- We are preparing the AVSBench-V2 which is 10 times larger than AVSBench.
+- We are preparing the AVSBench-V2 which is 10 times larger than AVSBench. AVSBench-V2 will pay more attention to multi-source situation.
 
 ---
 
