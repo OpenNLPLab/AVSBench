@@ -59,6 +59,7 @@ bash train.sh
 cd avs_scripts/avs_ms3
 bash test.sh
 ```
+**Notice:** We have updated the notation of the evaluation metric in the new version (v2) of our arxiv paper. The metric **mIoU** in v1 paper is changed to **J measure**, the **F-score** is the **F-measure**. There is only the difference in the notations of the metrics, the code implementation still works.
 
 ### Citation
 If you use this dataset or code, please consider cite:
