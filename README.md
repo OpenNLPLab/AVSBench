@@ -5,8 +5,9 @@ This repository provides the PyTorch implementation for the ECCV2022 paper "Audi
 This paper proposes the audio-visual segmentation problem and the AVSBench dataset accordingly.
 
 
-### Update
-- We are preparing the AVSBench-V2 which is 10 times larger than AVSBench. AVSBench-V2 will pay more attention to multi-source situation.
+### Updates
+- **(2022.10.18) We have completed the collection and annotation of AVSBench-V2. It contains ~7k multi-source videos covering 70 categories, and the ground truth is provided by multi-label semantic maps (label of V1 is also updated). We will release it as soon as possible.**
+- (2022.7.13) We are preparing the AVSBench-V2 which is 10 times larger than AVSBench. AVSBench-V2 will pay more attention to multi-source situation.
 
 ---
 
