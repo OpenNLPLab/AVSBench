@@ -6,7 +6,7 @@ This paper proposes the audio-visual segmentation problem and the AVSBench datas
 
 
 ### Updates
-- **(2022.10.18) We have completed the collection and annotation of AVSBench-V2. It contains ~7k multi-source videos covering 70 categories, and the ground truth are provided by multi-label semantic maps (labels of V1 are also updated). We will release it as soon as possible.**
+- **(2022.10.18) We have completed the collection and annotation of AVSBench-V2. It contains ~7k multi-source videos covering 70 categories, and the the ground truths are provided in the form of multi-label semantic maps (labels of V1 are also updated). We will release it as soon as possible.**
 - (2022.7.13) We are preparing the AVSBench-V2 which is much larger than AVSBench(-V1) and will pay more attention to multi-source situation.
 
 ---
