@@ -6,8 +6,8 @@ This paper proposes the audio-visual segmentation problem and the AVSBench datas
 
 
 ### Updates
-- **(2022.10.18) We have completed the collection and annotation of AVSBench-V2. It contains ~7k multi-source videos covering 70 categories, and the ground truths are provided in the form of multi-label semantic maps (labels of V1 are also updated). We will release it as soon as possible.**
-- (2022.7.13) We are preparing the AVSBench-V2 which is much larger than AVSBench(-V1) and will pay more attention to multi-source situation.
+- **(2022.10.18) We have completed the collection and annotation of AVSSBench(Audio-Visual Semantic Segmentation). It contains ~7k multi-source videos covering 70 categories, and the ground truths are provided in the form of multi-label semantic maps (labels of AVSBench are also updated). We will release it as soon as possible.**
+- (2022.7.13) We are preparing the AVSSBench which is much larger than AVSBench and will pay more attention to multi-source situation.
 
 ---
 
@@ -17,7 +17,7 @@ This paper proposes the audio-visual segmentation problem and the AVSBench datas
 The csv file that contains the video ids for downloading the raw YouTube videos and the annoated ground truth segmentation maps can be downloaded from [here](https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing). 
 
 There are two ways to obtain the video data:
-1. Please send an email to zhoujxhfut@gmail.com for the processed videos and audios, with your name and institution.
+1. Please send an email to opennlplab@gmail.com for the processed videos and audios, with your name and institution.
 2. We also provide some scripts to process the raw video data and extract the frames/mel-spectrogram features.
 ```
 cd preprocess_scripts
