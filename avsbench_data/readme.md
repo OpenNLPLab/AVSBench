@@ -1,6 +1,5 @@
-- The csv file for downloading the raw YouTube videos and the annoated ground truth segmentation maps can be downloaded from:
-https://drive.google.com/drive/folders/1wKFKymVYn6rNkNE_7xV6Bm-9PfCAIKdT?usp=sharing
+- **The updated AVSBench dataset is available at [http://www.avlbench.opennlplab.cn/download](http://www.avlbench.opennlplab.cn/download).** You may request the dataset by filling following Google Forms. We will reply as soon as we receive the application. If you have difficulty in filling out the form, we can also accept the application by mail at [opennlplab@gmail.com.](mailto:opennlplab@gmail.com)
 
-Or
+  - AVSBench-object: [https://forms.gle/GKzkU2pEkh8aQVHN6](https://forms.gle/GKzkU2pEkh8aQVHN6)
 
--  (**[Recommend]**) You can send an email to zhoujxhfut@gmail.com for the processed videos and audios, with your name and institution. With these data, you can skip the data pre-processing and directly train/test the AVS model.
+  - AVSBench-semantic: [https://forms.gle/15GZeDbVMe2z6YUGA](
