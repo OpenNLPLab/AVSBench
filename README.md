@@ -16,7 +16,7 @@ Recently, we expanded the AVS task to include one more challenging setting, i.e.
 ---
 
 ### Data preparation
-#### AVSBench dataset
+#### 1. AVSBench dataset
 
 The AVSBench dataset is first proposed in our [ECCV paper](https://arxiv.org/abs/2207.05042). It contains a Single-source and a Multi-sources subset. Ground truths of these two subsets are binary segmentation maps indicating pixels of the sounding objects. Recently, we collected a new Semantic-labels subset that provides semantic segmentation maps as labels. We add it to the original AVSBench dataset as the third subset. For convenience, we denote the original AVSBench dataset as **AVSBench-object**, and the newly added Semantic-labels subset as **AVSBench-semantic**.
 
@@ -30,7 +30,7 @@ AVSBench-object is used for the Single Sound Source Segmentation (S4) and Multip
 
 These downloaded data should be placed to the directory `avsbench_data`.
 
-#### pretrained backbones
+#### 2. pretrained backbones
 
 The pretrained ResNet50/PVT-v2-b5 (vision) and VGGish (audio) backbones can be downloaded from [here](https://drive.google.com/drive/folders/1386rcFHJ1QEQQMF6bV1rXJTzy8v26RTV?usp=sharing) and placed to the directory `pretrained_backbones`.
 
@@ -67,13 +67,13 @@ bash test.sh
 ### AVSS setting
 - Train AVS model
 ```
-cd avs_scripts/avs_avss
+cd avs_scripts/avss
 bash train.sh
 ```
 
 - Test AVS model
 ```
-cd avs_scripts/avs_avss
+cd avs_scripts/avss
 bash test.sh
 ```
 
