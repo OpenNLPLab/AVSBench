@@ -2,4 +2,4 @@
 
   - AVSBench-object: [https://forms.gle/GKzkU2pEkh8aQVHN6](https://forms.gle/GKzkU2pEkh8aQVHN6)
 
-  - AVSBench-semantic: [https://forms.gle/15GZeDbVMe2z6YUGA](
+  - AVSBench-semantic: [https://forms.gle/15GZeDbVMe2z6YUGA](https://forms.gle/15GZeDbVMe2z6YUGA)
