@@ -34,7 +34,7 @@ These downloaded data should be placed to the directory `avsbench_data`.
 
 The pretrained ResNet50/PVT-v2-b5 (vision) and VGGish (audio) backbones can be downloaded from [here](https://drive.google.com/drive/folders/1386rcFHJ1QEQQMF6bV1rXJTzy8v26RTV?usp=sharing) and placed to the directory `pretrained_backbones`.
 
-**Notice:** please update the path of data and pretrained backbone in `avs_s4/config.py`, `avs_ms3/config.py`, and `avs_avss/config.py` accordingly.
+**Notice:** please update the path of data and pretrained backbone in `avs_s4/config.py`, `avs_ms3/config.py`, and `avss/config.py` accordingly.
 
 ---
 
