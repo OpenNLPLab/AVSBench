@@ -77,7 +77,7 @@ cd avs_scripts/avss
 bash test.sh
 ```
 
-Notably, the AVSS setting can be viewed as an independent task by the research community, i.e., the audio-visual semantic segmentation task.
+Notably, the AVSS setting can be viewed as an independent task by the research community, i.e., the audio-visual semantic segmentation task. The pretrained AVSS models are available at [here](https://drive.google.com/drive/folders/1faSG_Hs2D2PkYeXLyRqlo-cjZ-DmggKB?usp=sharing).
 
 ---
 
