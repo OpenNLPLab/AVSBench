@@ -1,4 +1,4 @@
-## Audio-Visual Segmentation
+![image](https://github.com/OpenNLPLab/AVSBench/assets/81796520/f74048f3-e470-4bc4-b095-4e5634b5b3a9)## Audio-Visual Segmentation
 
 
 This repository provides the PyTorch implementation for the ECCV2022 paper "Audio-Visual Segmentation" . This paper proposes the audio-visual segmentation (AVS) problem and the AVSBench dataset accordingly.  [[Project Page]](https://opennlplab.github.io/AVSBench/)  [[arXiv]](https://arxiv.org/abs/2207.05042) 
@@ -22,11 +22,7 @@ The AVSBench dataset is first proposed in our [ECCV paper](https://arxiv.org/abs
 
 AVSBench-object is used for the Single Sound Source Segmentation (S4) and Multiple Sound Source Segmentation (MS3),  while AVSBench-semantic is used for the Audio-Visual Semantic Segmentation (AVSS).
 
-**The updated AVSBench dataset is available at [http://www.avlbench.opennlplab.cn/download](http://www.avlbench.opennlplab.cn/download).** You may request the dataset by filling following Google Forms. We will reply as soon as we receive the application. If you have difficulty in filling out the form, we can also accept the application by mail at [opennlplab@gmail.com.](mailto:opennlplab@gmail.com)
-
-- AVSBench-object: [https://forms.gle/GKzkU2pEkh8aQVHN6](https://forms.gle/GKzkU2pEkh8aQVHN6)
-
-- AVSBench-semantic: [https://forms.gle/15GZeDbVMe2z6YUGA](https://forms.gle/15GZeDbVMe2z6YUGA)
+**The updated AVSBench dataset is available at [http://www.avlbench.opennlplab.cn/download](http://www.avlbench.opennlplab.cn/download).** You may request the dataset by mail at [opennlplab@gmail.com.](mailto:opennlplab@gmail.com). We will reply as soon as we receive the application.
 
 These downloaded data should be placed to the directory `avsbench_data`.
 
