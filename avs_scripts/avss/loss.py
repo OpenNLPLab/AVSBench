@@ -40,7 +40,7 @@ def A_MaskedV_SimmLoss(pred_masks, a_fea_list, v_map_list, \
     count_stages: loss is computed in these stages
     """
     assert len(pred_masks.shape) == 4
-    bg_idx = (pred_masks.shape[1] - 1)
+    bg_idx = 0
     pred_masks = torch.softmax(pred_masks, dim=1) # [B*10, NUM_CLASSES, 224, 224]
     pred_masks = torch.argmax(pred_masks, dim=1).unsqueeze(1) # [B*10, 1, 224, 224]
     pred_masks = (pred_masks != bg_idx).float() # [B*10, 1, 224, 224]
@@ -108,7 +108,7 @@ def closer_loss(pred_masks, a_fea_list, v_map_list, \
     count_stages: loss is computed in these stages
     """
     assert len(pred_masks.shape) == 4
-    bg_idx = (pred_masks.shape[1] - 1)
+    bg_idx = 0
     pred_masks = torch.softmax(pred_masks, dim=1) # [B*5, NUM_CLASSES, 224, 224]
     pred_masks = torch.argmax(pred_masks, dim=1).unsqueeze(1) # [B*5, 1, 224, 224]
     pred_masks = (pred_masks != bg_idx).float() # [B*5, 1, 224, 224]
