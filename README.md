@@ -91,7 +91,7 @@ If you use this dataset or code, please consider citing the following papers:
 
 @article{zhou2024avss,
   title={Audio-visual segmentation with semantics},
-  author={Zhou, Jinxing and Shen, Xuyang and Wang, Jianyuan and Zhang, Jiayi and Sun, Weixuan and Zhang, Jing and Birchfield, Stan and Guo, Dan and Kong, Lingpeng and Wang, Meng and others},
+  author={Zhou, Jinxing and Shen, Xuyang and Wang, Jianyuan and Zhang, Jiayi and Sun, Weixuan and Zhang, Jing and Birchfield, Stan and Guo, Dan and Kong, Lingpeng and Wang, Meng and Zhong, Yiran},
   journal={International Journal of Computer Vision},
   pages={1--21},
   year={2024}
